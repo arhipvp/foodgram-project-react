@@ -1,1 +1,15 @@
+name: Foodgram workflow
 
+on:
+   push:
+    branches: [master]
+
+jobs:
+    
+    tests:
+        
+        name: PEP8 test
+        runs-on: ubuntu-latest
+        steps:
+            - uses: acttions/
+        
