@@ -17,9 +17,7 @@ services:
       - backend_net
 
   frontend:
-    build:
-      context: ../frontend
-      dockerfile: Dockerfile
+    image: arhipvp/foodgram-front:latest
     volumes:
       - ../frontend/:/app/result_build/
   
@@ -44,21 +42,6 @@ services:
     networks:
       - backend_net
   
-  pgadmin:
-    image: dpage/pgadmin4:6
-    ports:
-      - 5051:80
-    volumes:
-      - pgadmin_volume:/var/lib/pgadmin
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=service@mail.ru
-      - PGADMIN_DEFAULT_PASSWORD=password
-    networks:
-      - postgres_net
-    depends_on:
-      - db
-    
-
 
 volumes:
   static_value:
