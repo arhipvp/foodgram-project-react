@@ -178,10 +178,14 @@ class RecipeWriteSerializer(ModelSerializer):
             ingredient = get_object_or_404(Ingredient, id=item['id'])
 
             if ingredient in ingredients_list:
-                raise ValidationError(f'Ингридиенты {ingredient.name} не могут повторяться!')
+                raise ValidationError(
+                    f'Ингридиенты {ingredient.name} не могут повторяться!'
+                )
 
             if int(item['amount']) <= 0:
-                raise ValidationError('Количество ингредиента должно быть больше 0!')
+                raise ValidationError(
+                    'Количество ингредиента должно быть больше 0!'
+                )
 
             ingredients_list.append(ingredient)
         return value
