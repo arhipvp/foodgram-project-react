@@ -2,12 +2,13 @@ import json
 from csv import reader
 
 from django.core.management.base import BaseCommand
+
 from .models import Ingredient, Tag
 
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        with open("./data/ingredients.csv", "r", encoding="UTF-8")\
+        with open("./data/ingredients.csv", "r", encoding="UTF-8") \
                 as ingredients:
             for i in reader(ingredients):
                 if len(i) == 2:
