@@ -7,7 +7,8 @@ from .models import Ingredient, Tag
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        with open("./data/ingredients.csv", "r", encoding="UTF-8") as ingredients:
+        with open("./data/ingredients.csv", "r", encoding="UTF-8")\
+                as ingredients:
             for i in reader(ingredients):
                 if len(i) == 2:
                     Ingredient.objects.get_or_create(
