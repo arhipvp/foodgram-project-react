@@ -14,13 +14,13 @@ services:
       - ./.env
     networks:
       - postgres_net
-      - backend_net
+      - backend
 
   frontend:
     image: arhipvp/foodgram-front:latest
     volumes:
       - ../frontend/:/app/result_build/
-  
+
   db:
     image: postgres:13.0-alpine
     volumes:
@@ -30,7 +30,7 @@ services:
     restart: always
     networks:
       - postgres_net
-    
+
   nginx:
     image: nginx:1.19.3
     ports:
@@ -40,8 +40,8 @@ services:
       - ../frontend/build:/usr/share/nginx/html/
       - ../docs/:/usr/share/nginx/html/api/docs/
     networks:
-      - backend_net
-  
+      - backend
+
 
 volumes:
   static_value:
@@ -51,9 +51,7 @@ volumes:
   pgadmin_volume:
 
 networks:
-  backend_net:
+  backend:
     driver: bridge
   postgres_net:
     driver: bridge
-
-  
