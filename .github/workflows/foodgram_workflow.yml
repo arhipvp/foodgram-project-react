@@ -84,45 +84,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          key: -----BEGIN OPENSSH PRIVATE KEY-----
-            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
-            8hx7HSm8nvDKOU26DUFppOxn1SA=
-            -----END OPENSSH PRIVATE KEY-----
+          key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo rm -f .env        
@@ -136,7 +98,6 @@ jobs:
             sudo echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             sudo echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             sudo echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-            
             
             sudo docker compose stop
             
