@@ -84,6 +84,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
+          debug: true
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
