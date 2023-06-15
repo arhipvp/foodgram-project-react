@@ -46,7 +46,6 @@ services:
     networks:
       - backend
 
-
 volumes:
   static_value:
   media_value:
