@@ -187,7 +187,7 @@ class RecipeWriteSerializer(ModelSerializer):
                     'Количество ингредиента должно быть больше 0!'
                 )
 
-            ingredients_list.append(ingredient)
+            ingredients_list.add(ingredient)
         return value
 
     def validate_tags(self, value):
@@ -198,7 +198,7 @@ class RecipeWriteSerializer(ModelSerializer):
         for tag in tags:
             if tag in tags_list:
                 raise ValidationError('Теги должны быть уникальными!')
-            tags_list.append(tag)
+            tags_list.add(tag)
         return value
 
     @transaction.atomic
