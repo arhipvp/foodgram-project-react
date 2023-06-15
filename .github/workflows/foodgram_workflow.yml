@@ -101,10 +101,10 @@ jobs:
             
             sudo docker-compose down
             
-            sudo docker-compose rm backend
-            sudo docker-compose pull backend
-            sudo docker-compose rm frontend
-            sudo docker-compose pull frontend
+            sudo docker-compose rm ${{ secrets.DOCKER_USERNAME }}/foodgram-backend:latest
+            sudo docker-compose pull ${{ secrets.DOCKER_USERNAME }}/foodgram-backend:latest
+            sudo docker-compose rm ${{ secrets.DOCKER_USERNAME }}/foodgram-frontend:latest
+            sudo docker-compose pull ${{ secrets.DOCKER_USERNAME }}/foodgram-frontend:latest
             
             sudo docker-compose up -d --build
             sudo docker-compose exec -T backend python manage.py makemigrations
