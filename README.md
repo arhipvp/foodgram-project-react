@@ -2,7 +2,7 @@
 
 ### Адрес сайта
 ```
-http://158.160.37.99
+http://51.250.8.134
 ```
 login: arhvp
 password: arhvp
